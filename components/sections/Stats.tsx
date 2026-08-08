@@ -72,7 +72,7 @@ export function Stats({ items }: StatsProps) {
             const Icon = iconMap[stat.icon ?? ""] ?? UsersIcon;
             return (
               <Reveal key={stat.label} delay={index * 100}>
-                <Card className="h-full border-primary/10 bg-white text-center shadow-sm">
+                <Card className="h-full border-primary/10 bg-primary/[0.03] text-center shadow-sm">
                   <CardContent>
                     <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Icon className="h-7 w-7" />

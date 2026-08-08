@@ -34,7 +34,7 @@ export function TargetLulusan({ data }: TargetLulusanProps) {
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
-        <Card className="mx-auto max-w-3xl border-primary/10 bg-white shadow-sm">
+        <Card className="mx-auto max-w-3xl border-primary/10 bg-primary/[0.03] shadow-sm">
           <CardContent>
             <ul className="space-y-4">
               {items.map((item, index) => (

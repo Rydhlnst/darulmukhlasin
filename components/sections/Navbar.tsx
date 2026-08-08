@@ -82,7 +82,7 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
           </div>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger render={<Button variant="ghost" size="icon" className="text-white hover:bg-white/15 sm:hidden" />}>
-              <MenuIcon className="h-5 w-5" />
+              <MenuIcon className="h-5 w-5 text-white" />
               <span className="sr-only">Buka menu</span>
             </SheetTrigger>
             <SheetContent side="left" showCloseButton={false}>

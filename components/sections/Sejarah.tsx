@@ -41,7 +41,7 @@ export function Sejarah({ data }: SejarahProps) {
   const visionBody = data?.visionBody ?? "Dengan semangat pengabdian yang terus dijaga, Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA berkomitmen untuk terus mencetak generasi Qur'ani yang beriman, berilmu, dan beramal, serta menjadi pusat pendidikan Islam yang memberikan manfaat bagi umat, bangsa, dan negara.";
 
   return (
-    <section id="sejarah" className="bg-white py-16 lg:py-24">
+    <section id="sejarah" className="bg-primary/[0.03] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>

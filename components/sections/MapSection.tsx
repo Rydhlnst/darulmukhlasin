@@ -38,7 +38,7 @@ export function MapSection({ settings }: MapSectionProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">Kunjungi Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA di Karimun, Kepulauan Riau.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-5">
-          <Card className="border-primary/10 bg-white shadow-sm lg:col-span-2">
+          <Card className="border-primary/10 bg-primary/[0.03] shadow-sm lg:col-span-2">
             <CardHeader><CardTitle className="text-lg">Informasi Kontak</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
