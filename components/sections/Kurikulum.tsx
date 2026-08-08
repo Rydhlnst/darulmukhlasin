@@ -48,7 +48,7 @@ export function Kurikulum({ data }: KurikulumProps) {
             return (
               <Card key={item.number} className="relative overflow-hidden border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
                 <CardHeader>
-                  <div className="mb-2 text-3xl font-bold text-[#fef3c7]">{item.number}</div>
+                  <div className="mb-2 text-3xl font-bold text-[#1a5c2a]/30">{item.number}</div>
                   <CardTitle className="flex items-center gap-2 text-base">
                     <Icon className="h-5 w-5 text-primary" />{item.title}
                   </CardTitle>

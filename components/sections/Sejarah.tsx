@@ -61,7 +61,7 @@ export function Sejarah({ data }: SejarahProps) {
                   {timelineItems.map((item, index) => (
                     <div key={item.year}>
                       <div className="flex items-start gap-4">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d97706] text-sm font-bold text-white">{item.year}</div>
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1a5c2a] text-sm font-bold text-white">{item.year}</div>
                         <div>
                           <h3 className="mb-1 text-sm font-semibold text-foreground">{item.title}</h3>
                           <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>

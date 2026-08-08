@@ -15,7 +15,7 @@ export function FloatingWhatsApp() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {open && (
-        <div className="w-72 overflow-hidden rounded-2xl border border-[#d97706] bg-white shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="w-72 overflow-hidden rounded-2xl border border-[#d5ecd5] bg-white shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200">
           <div className="bg-primary px-4 py-3">
             <p className="text-sm font-semibold text-white">Hubungi Kami</p>
             <p className="text-xs text-white/70">Pilih kontak yang ingin dihubungi</p>
