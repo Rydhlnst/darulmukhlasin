@@ -60,7 +60,7 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
     <section id="galeri" className={compact ? "bg-[#fef3c7] py-16 lg:py-24" : "min-h-screen bg-[#fef3c7] py-16 lg:py-24"}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <Badge variant="secondary" className="mb-4">Dokumentasi</Badge>
+          <Badge className="mb-4 bg-[#1a5c2a] text-white">Dokumentasi</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Galeri Kegiatan</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">Dokumentasi kegiatan dan keseharian di Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA.</p>
         </div>

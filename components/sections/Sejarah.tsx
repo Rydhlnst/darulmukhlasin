@@ -44,7 +44,7 @@ export function Sejarah({ data }: SejarahProps) {
     <section id="sejarah" className="bg-[#fef3c7] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <Badge variant="secondary" className="mb-4">{badge}</Badge>
+          <Badge className="mb-4 bg-[#1a5c2a] text-white">{badge}</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
@@ -84,7 +84,7 @@ export function Sejarah({ data }: SejarahProps) {
               <CardContent>
                 <div className="space-y-4">
                   {tokohItems.map((tokoh) => (
-                    <div key={tokoh.name} className="rounded-md bg-muted/50 p-3">
+                    <div key={tokoh.name} className="rounded-md bg-[#fef3c7] p-3">
                       <h4 className="text-sm font-semibold text-foreground">{tokoh.name}</h4>
                       <p className="mb-1 text-xs font-medium text-[#1a5c2a]">{tokoh.role}</p>
                       <p className="text-xs text-muted-foreground">{tokoh.description}</p>

@@ -38,7 +38,7 @@ export function Kurikulum({ data }: KurikulumProps) {
     <section id="kurikulum" className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <Badge variant="secondary" className="mb-4">{badge}</Badge>
+          <Badge className="mb-4 bg-[#1a5c2a] text-white">{badge}</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
@@ -65,7 +65,7 @@ export function Kurikulum({ data }: KurikulumProps) {
           <CardContent>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
               {dirasahItems.map((item) => (
-                <div key={item} className="rounded-md bg-muted/50 px-3 py-2 text-sm text-muted-foreground">{item}</div>
+                <div key={item} className="rounded-md bg-[#fef3c7] px-3 py-2 text-sm text-[#1a5c2a]">{item}</div>
               ))}
             </div>
           </CardContent>

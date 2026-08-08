@@ -32,7 +32,7 @@ export function Profil({ data }: ProfilProps) {
     <section id="profil" className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <Badge variant="secondary" className="mb-4">{badge}</Badge>
+          <Badge className="mb-4 bg-[#1a5c2a] text-white">{badge}</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
@@ -66,7 +66,7 @@ export function Profil({ data }: ProfilProps) {
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 {programs.map((program) => (
-                  <div key={program.title} className="rounded-md bg-muted/50 p-3">
+                  <div key={program.title} className="rounded-md bg-[#fef3c7] p-3">
                     <h4 className="mb-1 text-sm font-semibold text-foreground">{program.title}</h4>
                     <p className="text-xs text-muted-foreground">{program.description}</p>
                   </div>

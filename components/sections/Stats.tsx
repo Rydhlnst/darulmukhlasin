@@ -80,7 +80,7 @@ export function Stats({ items }: StatsProps) {
                     <div className="text-3xl font-bold text-[#1a5c2a] lg:text-4xl">
                       <Counter value={stat.value} suffix={stat.suffix ?? ""} />
                     </div>
-                    <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="mt-1 text-sm text-[#1a5c2a]">{stat.label}</div>
                   </CardContent>
                 </Card>
               </Reveal>
