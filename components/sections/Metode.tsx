@@ -30,7 +30,7 @@ export function Metode({ data }: MetodeProps) {
   }
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="bg-primary/5 py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
@@ -41,7 +41,7 @@ export function Metode({ data }: MetodeProps) {
           {items.map((item) => {
             const Icon = iconMap[item.icon] ?? BookOpenIcon;
             return (
-              <Card key={item.name} className="group hover:shadow-md transition-shadow">
+              <Card key={item.name} className="group border-primary/10 bg-white shadow-sm transition-shadow hover:shadow-md">
                 <CardContent className="flex gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="h-5 w-5" />

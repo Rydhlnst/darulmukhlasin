@@ -65,14 +65,14 @@ export function Stats({ items }: StatsProps) {
   const stats = (items && items.length > 0 ? items : defaultStats) as StatItem[];
 
   return (
-    <section className="bg-muted/30 py-16 lg:py-20">
+    <section className="bg-primary/5 py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {stats.map((stat, index) => {
             const Icon = iconMap[stat.icon ?? ""] ?? UsersIcon;
             return (
               <Reveal key={stat.label} delay={index * 100}>
-                <Card className="h-full text-center">
+                <Card className="h-full border-primary/10 bg-white text-center shadow-sm">
                   <CardContent>
                     <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Icon className="h-7 w-7" />

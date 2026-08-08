@@ -30,7 +30,7 @@ export function MapSection({ settings }: MapSectionProps) {
   const mapsLink = settings?.mapsLink ?? "https://maps.app.goo.gl/LKRpJoxJxtTWNLTY7";
 
   return (
-    <section className="py-16 lg:py-24">
+    <section className="bg-primary/5 py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">Lokasi Kami</Badge>
@@ -38,7 +38,7 @@ export function MapSection({ settings }: MapSectionProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">Kunjungi Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA di Karimun, Kepulauan Riau.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-5">
-          <Card className="lg:col-span-2">
+          <Card className="border-primary/10 bg-white shadow-sm lg:col-span-2">
             <CardHeader><CardTitle className="text-lg">Informasi Kontak</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
@@ -79,7 +79,7 @@ export function MapSection({ settings }: MapSectionProps) {
               </div>
             </CardContent>
           </Card>
-          <Card className="overflow-hidden p-0 lg:col-span-3">
+          <Card className="overflow-hidden border-primary/10 p-0 shadow-sm lg:col-span-3">
             <div className="aspect-square w-full lg:aspect-auto lg:min-h-[500px]">
               <iframe src={mapsEmbedUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA" />
             </div>

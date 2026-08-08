@@ -3,7 +3,7 @@ import { FrontendLayout } from "@/components/sections/FrontendLayout";
 import { Gallery } from "@/components/sections/Gallery";
 import { CTASection } from "@/components/sections/CTASection";
 import { createMetadata, createJsonLd } from "@/lib/seo";
-import { getLayoutData } from "@/lib/home-data";
+import { getSectionData, getLayoutData } from "@/lib/home-data";
 import { db } from "@/db";
 import { media } from "@/db/schema";
 import { eq, desc } from "drizzle-orm";
@@ -18,9 +18,15 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default async function GaleriPage() {
-  const [galleryMedia, ctaData, layoutData] = await Promise.all([
-    db.select().from(media).where(eq(media.section, "gallery")).orderBy(desc(media.createdAt)),
-    import("@/lib/home-data").then((m) => m.getSectionData("home", "cta")),
+  let galleryMedia: any[] = [];
+  try {
+    galleryMedia = await db.select().from(media).where(eq(media.section, "gallery")).orderBy(desc(media.createdAt));
+  } catch {
+    galleryMedia = [];
+  }
+
+  const [ctaData, layoutData] = await Promise.all([
+    getSectionData("home", "cta"),
     getLayoutData(),
   ]);
 

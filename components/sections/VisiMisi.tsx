@@ -25,7 +25,7 @@ export function VisiMisi({ data }: VisiMisiProps) {
   }
 
   return (
-    <section id="visi-misi" className="bg-muted/30 py-16 lg:py-24">
+    <section id="visi-misi" className="bg-primary/5 py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
@@ -33,7 +33,7 @@ export function VisiMisi({ data }: VisiMisiProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Card>
+          <Card className="border-primary/10 bg-white shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TargetIcon className="h-5 w-5 text-primary" />Visi
@@ -45,7 +45,7 @@ export function VisiMisi({ data }: VisiMisiProps) {
               </blockquote>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-primary/10 bg-white shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <ListIcon className="h-5 w-5 text-primary" />Misi

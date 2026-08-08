@@ -29,7 +29,7 @@ export function Profil({ data }: ProfilProps) {
   }
 
   return (
-    <section id="profil" className="py-16 lg:py-24">
+    <section id="profil" className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
@@ -37,7 +37,7 @@ export function Profil({ data }: ProfilProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Card>
+          <Card className="border-primary/10 bg-primary/[0.03]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpenIcon className="h-5 w-5 text-primary" />Tentang Pesantren
@@ -57,7 +57,7 @@ export function Profil({ data }: ProfilProps) {
               </div>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-primary/10 bg-primary/[0.03]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpenIcon className="h-5 w-5 text-primary" />Program Utama

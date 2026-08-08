@@ -57,7 +57,7 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
   const scrollNext = React.useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section id="galeri" className={compact ? "py-16 lg:py-24" : "min-h-screen py-16 lg:py-24"}>
+    <section id="galeri" className={compact ? "bg-primary/5 py-16 lg:py-24" : "min-h-screen bg-primary/5 py-16 lg:py-24"}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <Badge variant="secondary" className="mb-4">Dokumentasi</Badge>

@@ -35,7 +35,7 @@ export function Kurikulum({ data }: KurikulumProps) {
   }
 
   return (
-    <section id="kurikulum" className="py-16 lg:py-24">
+    <section id="kurikulum" className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
@@ -46,7 +46,7 @@ export function Kurikulum({ data }: KurikulumProps) {
           {kurikulumItems.map((item) => {
             const Icon = iconMap[item.icon] ?? BookOpenIcon;
             return (
-              <Card key={item.number} className="relative overflow-hidden">
+              <Card key={item.number} className="relative overflow-hidden border-primary/10 bg-primary/[0.03] shadow-sm">
                 <CardHeader>
                   <div className="mb-2 text-3xl font-bold text-primary/20">{item.number}</div>
                   <CardTitle className="flex items-center gap-2 text-base">
@@ -60,7 +60,7 @@ export function Kurikulum({ data }: KurikulumProps) {
             );
           })}
         </div>
-        <Card className="mt-8">
+        <Card className="mt-8 border-primary/10 bg-primary/[0.03] shadow-sm">
           <CardHeader><CardTitle>Mata Pelajaran Dirasah Islamiyah</CardTitle></CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
