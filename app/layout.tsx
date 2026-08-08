@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-playfair'});
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -12,7 +12,7 @@ const notoSansArabic = Noto_Sans_Arabic({
   weight: ["400", "600", "700"],
 });
 
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
+const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-noto-sans'});
 
 export const metadata: Metadata = {
   title: "Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA",
