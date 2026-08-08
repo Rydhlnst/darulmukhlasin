@@ -32,13 +32,13 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
     if (mediaProp && mediaProp.length > 0) {
       return mediaProp.map((m) => ({ src: m.imageUrl, alt: m.alt ?? "Galeri" }));
     }
-    return Array.from({ length: 19 }, (_, i) => ({
+    return Array.from({ length: 24 }, (_, i) => ({
       src: `/gallery/gallery-${i + 1}.jpg`,
       alt: `Galeri Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA ${i + 1}`,
     }));
   }, [mediaProp]);
 
-  const slidesToShow = compact ? 6 : 19;
+  const slidesToShow = compact ? 6 : 24;
 
   const onSelect = React.useCallback(() => {
     if (!emblaApi) return;

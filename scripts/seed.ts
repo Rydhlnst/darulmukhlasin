@@ -88,7 +88,7 @@ async function seed() {
   console.log("  -> Seeding media (gallery)...");
   const existingMedia = await db.select().from(media).limit(1);
   if (existingMedia.length === 0) {
-    for (let i = 1; i <= 19; i++) {
+    for (let i = 1; i <= 24; i++) {
       await db.insert(media).values({
         imageUrl: `/gallery/gallery-${i}.jpg`,
         alt: `Galeri Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA ${i}`,
