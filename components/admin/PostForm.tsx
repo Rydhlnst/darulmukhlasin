@@ -180,6 +180,7 @@ export function PostForm({ post, categories }: PostFormProps) {
               value={featuredImageUrl}
               onChange={setFeaturedImageUrl}
               label="Unggah Gambar Unggulan"
+              aspect={16 / 9}
             />
           </CardContent>
         </Card>

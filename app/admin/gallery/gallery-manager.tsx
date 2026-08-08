@@ -122,6 +122,7 @@ export function GalleryManager({ initialMedia }: GalleryManagerProps) {
             value={imageUrl}
             onChange={setImageUrl}
             label="Unggah Foto"
+            aspect={4 / 3}
           />
           {imageUrl && (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

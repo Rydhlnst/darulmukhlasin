@@ -136,6 +136,7 @@ export function HeroManager() {
             value={newSlide.imageUrl}
             onChange={(url) => setNewSlide((prev) => ({ ...prev, imageUrl: url }))}
             label="Unggah Gambar Hero"
+            aspect={16 / 9}
           />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-2">
