@@ -49,6 +49,8 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
+    const interval = setInterval(() => { emblaApi.scrollNext(); }, 4000);
+    return () => { clearInterval(interval); emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
 
   const scrollPrev = React.useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
