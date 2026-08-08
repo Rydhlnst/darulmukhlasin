@@ -107,20 +107,19 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
         <SidebarContent />
       </aside>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile top bar + drawer */}
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger
-          render={
-            <Button
-              variant="ghost"
-              size="icon"
-              className="fixed left-4 top-4 z-50 lg:hidden"
-            />
-          }
-        >
-          <MenuIcon className="h-5 w-5" />
-          <span className="sr-only">Buka menu</span>
-        </SheetTrigger>
+        <header className="sticky top-0 z-40 flex h-14 items-center gap-2 border-b border-border bg-card px-4 lg:hidden">
+          <SheetTrigger
+            render={<Button variant="ghost" size="icon" className="-ml-2" />}
+          >
+            <MenuIcon className="h-5 w-5" />
+            <span className="sr-only">Buka menu</span>
+          </SheetTrigger>
+          <span className="text-sm font-bold uppercase tracking-wider text-foreground">
+            Admin Panel
+          </span>
+        </header>
         <SheetContent side="left" showCloseButton={false} className="w-64 p-0">
           <SheetHeader className="sr-only">
             <SheetTitle>Menu Navigasi</SheetTitle>

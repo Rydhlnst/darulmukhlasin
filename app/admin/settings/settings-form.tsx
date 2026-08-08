@@ -67,7 +67,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
         <CardHeader>
           <CardTitle>Informasi Situs</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-2">
+        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="siteName">Nama Situs</Label>
             <Input
@@ -94,7 +94,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
         <CardHeader>
           <CardTitle>Informasi Kontak</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-2">
+        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="phone">Telepon</Label>
             <Input
@@ -140,7 +140,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
         <CardHeader>
           <CardTitle>Informasi Lokasi & Operasional</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-2">
+        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="mapsEmbedUrl">Google Maps Embed URL</Label>
             <Textarea
@@ -179,7 +179,7 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
         <CardHeader>
           <CardTitle>Informasi Donasi</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-2">
+        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <Label htmlFor="donationInfo">Keterangan Donasi</Label>
             <Textarea

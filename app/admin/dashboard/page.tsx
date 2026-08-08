@@ -58,7 +58,7 @@ export default async function DashboardPage() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {statCards.map((stat) => (
             <Link
               key={stat.label}

@@ -137,7 +137,7 @@ export function HeroManager() {
             onChange={(url) => setNewSlide((prev) => ({ ...prev, imageUrl: url }))}
             label="Unggah Gambar Hero"
           />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="new-title">Judul</Label>
               <Input
