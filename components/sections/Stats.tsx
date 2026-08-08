@@ -65,19 +65,19 @@ export function Stats({ items }: StatsProps) {
   const stats = (items && items.length > 0 ? items : defaultStats) as StatItem[];
 
   return (
-    <section className="bg-[#eef7ee] py-16 lg:py-20">
+    <section className="bg-[#fef3c7] py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {stats.map((stat, index) => {
             const Icon = iconMap[stat.icon ?? ""] ?? UsersIcon;
             return (
               <Reveal key={stat.label} delay={index * 100}>
-                <Card className="h-full border-[#d5ecd5] bg-white text-center shadow-sm">
+                <Card className="h-full border-[#d97706] bg-white text-center shadow-sm">
                   <CardContent>
-                    <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]">
+                    <div className="mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#fef3c7] text-[#1a5c2a]">
                       <Icon className="h-7 w-7" />
                     </div>
-                    <div className="text-3xl font-bold text-[#b45309] lg:text-4xl">
+                    <div className="text-3xl font-bold text-[#1a5c2a] lg:text-4xl">
                       <Counter value={stat.value} suffix={stat.suffix ?? ""} />
                     </div>
                     <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>

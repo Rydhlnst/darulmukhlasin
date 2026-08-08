@@ -46,7 +46,7 @@ export function Kurikulum({ data }: KurikulumProps) {
           {kurikulumItems.map((item) => {
             const Icon = iconMap[item.icon] ?? BookOpenIcon;
             return (
-              <Card key={item.number} className="relative overflow-hidden border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
+              <Card key={item.number} className="relative overflow-hidden border-[#d97706] bg-white shadow-sm">
                 <CardHeader>
                   <div className="mb-2 text-3xl font-bold text-[#fef3c7]">{item.number}</div>
                   <CardTitle className="flex items-center gap-2 text-base">
@@ -60,7 +60,7 @@ export function Kurikulum({ data }: KurikulumProps) {
             );
           })}
         </div>
-        <Card className="mt-8 border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
+        <Card className="mt-8 border-[#d97706] bg-[#fef3c7] shadow-sm">
           <CardHeader><CardTitle>Mata Pelajaran Dirasah Islamiyah</CardTitle></CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
