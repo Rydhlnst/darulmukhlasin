@@ -41,9 +41,9 @@ export function Metode({ data }: MetodeProps) {
           {items.map((item) => {
             const Icon = iconMap[item.icon] ?? BookOpenIcon;
             return (
-              <Card key={item.name} className="group border-[#d5ecd5] bg-white shadow-sm transition-shadow hover:shadow-md">
+              <Card key={item.name} className="group border-[#fde68a] bg-white shadow-sm transition-shadow hover:shadow-md">
                 <CardContent className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309] transition-colors group-hover:bg-[#f59e0b] group-hover:text-white">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>

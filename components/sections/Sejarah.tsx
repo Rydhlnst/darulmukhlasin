@@ -50,10 +50,10 @@ export function Sejarah({ data }: SejarahProps) {
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <Card className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
+            <Card className="border-[#fde68a] bg-[#fef9e7] shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <CalendarIcon className="h-5 w-5 text-primary" />Linimasa
+                  <CalendarIcon className="h-5 w-5 text-[#b45309]" />Linimasa
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -61,7 +61,7 @@ export function Sejarah({ data }: SejarahProps) {
                   {timelineItems.map((item, index) => (
                     <div key={item.year}>
                       <div className="flex items-start gap-4">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">{item.year}</div>
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f59e0b] text-sm font-bold text-white">{item.year}</div>
                         <div>
                           <h3 className="mb-1 text-sm font-semibold text-foreground">{item.title}</h3>
                           <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
@@ -75,7 +75,7 @@ export function Sejarah({ data }: SejarahProps) {
             </Card>
           </div>
           <div>
-            <Card className="h-full border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
+            <Card className="h-full border-[#fde68a] bg-[#fef9e7] shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <UserIcon className="h-5 w-5 text-primary" />Tokoh Pendiri
@@ -86,7 +86,7 @@ export function Sejarah({ data }: SejarahProps) {
                   {tokohItems.map((tokoh) => (
                     <div key={tokoh.name} className="rounded-md bg-muted/50 p-3">
                       <h4 className="text-sm font-semibold text-foreground">{tokoh.name}</h4>
-                      <p className="mb-1 text-xs font-medium text-primary">{tokoh.role}</p>
+                      <p className="mb-1 text-xs font-medium text-[#b45309]">{tokoh.role}</p>
                       <p className="text-xs text-muted-foreground">{tokoh.description}</p>
                     </div>
                   ))}
@@ -95,9 +95,9 @@ export function Sejarah({ data }: SejarahProps) {
             </Card>
           </div>
         </div>
-        <Card className="mt-8 border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
+        <Card className="mt-8 border-[#fde68a] bg-[#fef9e7] shadow-sm">
           <CardContent className="flex items-start gap-4">
-            <BuildingIcon className="mt-1 h-6 w-6 shrink-0 text-primary" />
+            <BuildingIcon className="mt-1 h-6 w-6 shrink-0 text-[#b45309]" />
             <div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">{visionTitle}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{visionBody}</p>

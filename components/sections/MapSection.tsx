@@ -44,32 +44,32 @@ export function MapSection({ settings }: MapSectionProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">Kunjungi Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA di Karimun, Kepulauan Riau.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-5">
-          <Card className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm lg:col-span-2">
+          <Card className="border-[#fde68a] bg-[#fef9e7] shadow-sm lg:col-span-2">
             <CardHeader><CardTitle className="text-lg">Informasi Kontak</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><MapPinIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]"><MapPinIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Alamat</h4>
                   <p className="text-sm text-muted-foreground">{address}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><PhoneIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]"><PhoneIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Telepon</h4>
                   <p className="text-sm text-muted-foreground">Hubungi via WhatsApp</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><MailIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]"><MailIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Email</h4>
                   <p className="text-sm text-muted-foreground">{email}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><ClockIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]"><ClockIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Jam Operasional</h4>
                   <p className="text-sm text-muted-foreground">{operationalHours}</p>
@@ -85,7 +85,7 @@ export function MapSection({ settings }: MapSectionProps) {
               </div>
             </CardContent>
           </Card>
-          <Card className="overflow-hidden border-[#d5ecd5] p-0 shadow-sm lg:col-span-3">
+          <Card className="overflow-hidden border-[#fde68a] p-0 shadow-sm lg:col-span-3">
             <div className="aspect-square w-full lg:aspect-auto lg:min-h-[500px]">
               <iframe src={mapsEmbedUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA" />
             </div>
@@ -93,9 +93,9 @@ export function MapSection({ settings }: MapSectionProps) {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {adminContacts.map((c) => (
-            <Card key={c.phone} className="border-[#d5ecd5] bg-white shadow-sm">
+            <Card key={c.phone} className="border-[#fde68a] bg-white shadow-sm">
               <CardContent className="flex items-center gap-4 p-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309]">
                   <UsersIcon className="h-5 w-5" />
                 </div>
                 <div className="min-w-0 flex-1">

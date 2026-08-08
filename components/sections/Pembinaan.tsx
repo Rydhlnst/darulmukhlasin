@@ -31,7 +31,7 @@ export function Pembinaan({ data }: PembinaanProps) {
   }
 
   return (
-    <section className="bg-[#eef7ee] py-16 lg:py-24">
+    <section className="bg-[#fef9e7] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
@@ -42,9 +42,9 @@ export function Pembinaan({ data }: PembinaanProps) {
           {items.map((item) => {
             const Icon = iconMap[item.icon] ?? HeartIcon;
             return (
-              <Card key={item.title} className="group border-[#d5ecd5] bg-white shadow-sm transition-shadow hover:shadow-md">
+              <Card key={item.title} className="group border-[#fde68a] bg-white shadow-sm transition-shadow hover:shadow-md">
                 <CardContent className="flex flex-col items-center text-center">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#d5ecd5] text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#fef3c7] text-[#b45309] transition-colors group-hover:bg-[#f59e0b] group-hover:text-white">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mb-1 text-sm font-semibold text-foreground">{item.title}</h3>
