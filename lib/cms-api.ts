@@ -144,6 +144,76 @@ export async function getAllCategories() {
   return await db.select().from(categories).orderBy(categories.name);
 }
 
+// ==================== PUBLIC POSTS (frontend) ====================
+
+export async function getPublishedPosts(categorySlug?: string) {
+  const conditions = [eq(posts.status, "published")];
+  if (categorySlug) {
+    conditions.push(eq(categories.slug, categorySlug));
+  }
+
+  return await db
+    .select({
+      id: posts.id,
+      title: posts.title,
+      slug: posts.slug,
+      excerpt: posts.excerpt,
+      featuredImageUrl: posts.featuredImageUrl,
+      categoryName: categories.name,
+      categorySlug: categories.slug,
+      publishedAt: posts.publishedAt,
+      createdAt: posts.createdAt,
+    })
+    .from(posts)
+    .leftJoin(categories, eq(posts.categoryId, categories.id))
+    .where(and(...conditions))
+    .orderBy(desc(posts.publishedAt), desc(posts.createdAt));
+}
+
+export async function getPublishedPostBySlug(slug: string) {
+  const result = await db
+    .select({
+      id: posts.id,
+      title: posts.title,
+      slug: posts.slug,
+      excerpt: posts.excerpt,
+      content: posts.content,
+      featuredImageUrl: posts.featuredImageUrl,
+      categoryName: categories.name,
+      categorySlug: categories.slug,
+      publishedAt: posts.publishedAt,
+      createdAt: posts.createdAt,
+    })
+    .from(posts)
+    .leftJoin(categories, eq(posts.categoryId, categories.id))
+    .where(and(eq(posts.slug, slug), eq(posts.status, "published")))
+    .limit(1);
+  return result[0];
+}
+
+// Categories that actually have at least one published post — used for filter tabs
+export async function getPublishedPostCategories() {
+  const rows = await db
+    .select({
+      name: categories.name,
+      slug: categories.slug,
+    })
+    .from(posts)
+    .innerJoin(categories, eq(posts.categoryId, categories.id))
+    .where(eq(posts.status, "published"))
+    .orderBy(categories.name);
+
+  const seen = new Set<string>();
+  const unique: { name: string; slug: string }[] = [];
+  for (const row of rows) {
+    if (!seen.has(row.slug)) {
+      seen.add(row.slug);
+      unique.push(row);
+    }
+  }
+  return unique;
+}
+
 // ==================== MEDIA ====================
 
 export async function getAllMedia() {

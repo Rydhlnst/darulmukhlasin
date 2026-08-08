@@ -16,6 +16,7 @@ const navItems = [
   { label: "Visi & Misi", href: "/visi-misi" },
   { label: "Kurikulum", href: "/kurikulum" },
   { label: "Sejarah", href: "/sejarah" },
+  { label: "Berita", href: "/berita" },
   { label: "Galeri", href: "/galeri" },
   { label: "Kontak", href: "/kontak" },
 ];
