@@ -14,13 +14,13 @@ export function CTASection({ data }: CTASectionProps) {
   return (
     <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden border-0 bg-[#f59e0b] text-white shadow-xl">
+        <Card className="overflow-hidden border-0 bg-[#1a5c2a] text-white shadow-xl">
           <CardContent className="relative px-6 py-12 text-center lg:px-12 lg:py-20">
             <div className="relative">
               <h2 className="mb-4 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">{heading}</h2>
               <p className="mx-auto mb-8 max-w-2xl text-white/80">{description}</p>
               <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Button size="lg" variant="outline" className="gap-2 border-white/40 bg-transparent text-white hover:bg-white hover:text-[#b45309]" render={<Link href="/kontak" />}>
+                <Button size="lg" variant="outline" className="gap-2 border-white/40 bg-transparent text-white hover:bg-white hover:text-[#1a5c2a]" render={<Link href="/kontak" />}>
                   <MessageCircleIcon className="h-4 w-4" />Hubungi Kami<ArrowRightIcon className="h-4 w-4" />
                 </Button>
               </div>
