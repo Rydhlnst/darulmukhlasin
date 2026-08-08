@@ -7,7 +7,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  BookOpenIcon,
   GraduationCapIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -94,9 +93,6 @@ export function Hero({ data }: HeroProps) {
               {description}
             </p>
             <div className="flex flex-col gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 sm:flex-row" style={{ animationDelay: "300ms", animationFillMode: "backwards" }}>
-              <Button size="lg" variant="secondary" className="gap-2" render={<Link href="/kontak" />}>
-                <BookOpenIcon className="h-4 w-4" />Daftar Sekarang
-              </Button>
               <Button size="lg" variant="outline" className="gap-2 border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" render={<Link href="/kurikulum" />}>
                 <GraduationCapIcon className="h-4 w-4" />Pelajari Program
               </Button>
