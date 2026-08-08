@@ -63,26 +63,26 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Top bar: logo + social + hamburger */}
-      <div className="bg-primary shadow-lg transition-all duration-300">
+      {/* Top bar: white bg */}
+      <div className="bg-white shadow-md transition-all duration-300">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo/logo.jpg" alt="Logo Darul Mukhlasin KUBA" width={40} height={40} className="h-9 w-9 shrink-0 rounded-full object-cover ring-2 ring-white/30" priority />
+            <Image src="/logo/logo.jpg" alt="Logo Darul Mukhlasin KUBA" width={40} height={40} className="h-9 w-9 shrink-0 rounded-full object-cover ring-2 ring-primary/20" priority />
             <div className="flex flex-col">
-              <span className="text-sm font-bold leading-tight text-white">Darul Mukhlasin KUBA</span>
-              <span className="hidden text-[10px] text-white/70 sm:block">Pondok Pesantren Tahfidzul Qur&apos;an</span>
+              <span className="text-sm font-bold leading-tight text-primary">Darul Mukhlasin KUBA</span>
+              <span className="hidden text-[10px] text-gray-500 sm:block">Pondok Pesantren Tahfidzul Qur&apos;an</span>
             </div>
           </Link>
           <div className="hidden items-center gap-2 sm:flex">
             {socialLinks.map((social) => (
-              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/15 hover:text-white" aria-label={social.label}>
+              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-primary hover:text-white" aria-label={social.label}>
                 <social.icon className="h-4 w-4" />
               </a>
             ))}
           </div>
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className="text-white hover:bg-white/15 sm:hidden" />}>
-              <MenuIcon className="h-5 w-5 text-white" />
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="text-primary hover:bg-gray-100 sm:hidden" />}>
+              <MenuIcon className="h-5 w-5 text-primary" />
               <span className="sr-only">Buka menu</span>
             </SheetTrigger>
             <SheetContent side="left" showCloseButton={false}>
@@ -105,11 +105,11 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
           </Sheet>
         </div>
       </div>
-      {/* Bottom bar: nav links — always visible, scrollable on mobile */}
-      <div className="border-t border-white/20 bg-primary transition-all duration-300">
+      {/* Bottom bar: solid green */}
+      <div className="bg-primary transition-all duration-300">
         <div className="mx-auto flex max-w-7xl items-center gap-0 overflow-x-auto px-4 scrollbar-none sm:px-6 lg:px-8">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className={cn("whitespace-nowrap border-b-2 px-3 py-3 text-xs font-medium transition-colors sm:px-4 sm:py-4 sm:text-sm", isActive(item.href) ? "border-white text-white" : "border-transparent text-white/70 hover:text-white")}>
+            <Link key={item.href} href={item.href} className={cn("whitespace-nowrap border-b-2 px-3 py-3 text-xs font-medium transition-colors sm:px-4 sm:py-4 sm:text-sm", isActive(item.href) ? "border-white text-white font-semibold" : "border-transparent text-white hover:text-white")}>
               {item.label}
             </Link>
           ))}
