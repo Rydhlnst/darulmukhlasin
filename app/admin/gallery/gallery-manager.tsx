@@ -21,6 +21,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "sonner";
 import {
   Trash2Icon,
@@ -41,6 +48,7 @@ export function GalleryManager({ initialMedia }: GalleryManagerProps) {
   const [alt, setAlt] = React.useState("");
   const [caption, setCaption] = React.useState("");
   const [category, setCategory] = React.useState("");
+  const [section, setSection] = React.useState("gallery");
   const [uploading, setUploading] = React.useState(false);
   const [deletingId, setDeletingId] = React.useState<number | null>(null);
 
@@ -55,7 +63,7 @@ export function GalleryManager({ initialMedia }: GalleryManagerProps) {
       const res = await fetch("/api/admin/gallery", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ alt, caption, category, imageUrl }),
+        body: JSON.stringify({ alt, caption, category, section, imageUrl }),
       });
 
       if (!res.ok) throw new Error("Gagal menyimpan");
@@ -67,6 +75,7 @@ export function GalleryManager({ initialMedia }: GalleryManagerProps) {
       setAlt("");
       setCaption("");
       setCategory("");
+      setSection("gallery");
       router.refresh();
     } catch {
       toast.error("Terjadi kesalahan");
@@ -133,6 +142,20 @@ export function GalleryManager({ initialMedia }: GalleryManagerProps) {
                   onChange={(e) => setCategory(e.target.value)}
                   placeholder="mis: kegiatan, fasilitas"
                 />
+              </div>
+              <div className="space-y-2">
+                <Label>Section</Label>
+                <Select value={section} onValueChange={setSection}>
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="gallery">Gallery</SelectItem>
+                    <SelectItem value="hero">Hero</SelectItem>
+                    <SelectItem value="profile">Profil</SelectItem>
+                    <SelectItem value="berita">Berita</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="space-y-2 sm:col-span-2">
                 <Label htmlFor="caption">Caption</Label>

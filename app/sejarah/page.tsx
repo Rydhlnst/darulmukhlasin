@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { FrontendLayout } from "@/components/sections/FrontendLayout";
 import { Sejarah } from "@/components/sections/Sejarah";
+import { CTASection } from "@/components/sections/CTASection";
 import { createMetadata, createJsonLd } from "@/lib/seo";
+import { getSectionData, getLayoutData } from "@/lib/home-data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = createMetadata({
   title: "Sejarah Pesantren",
@@ -10,7 +14,13 @@ export const metadata: Metadata = createMetadata({
   path: "/sejarah",
 });
 
-export default function SejarahPage() {
+export default async function SejarahPage() {
+  const [sejarahData, ctaData, layoutData] = await Promise.all([
+    getSectionData("home", "sejarah"),
+    getSectionData("home", "cta"),
+    getLayoutData(),
+  ]);
+
   const jsonLd = createJsonLd("Article", {
     headline: "Sejarah Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA",
     description:
@@ -23,14 +33,15 @@ export default function SejarahPage() {
   });
 
   return (
-    <FrontendLayout>
+    <FrontendLayout socialLinks={layoutData.socialLinks} settings={layoutData.settings}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="min-h-screen">
-        <Sejarah />
+        <Sejarah data={sejarahData} />
       </div>
+      <CTASection data={ctaData} />
     </FrontendLayout>
   );
 }

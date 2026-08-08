@@ -11,6 +11,10 @@ import {
   LogOutIcon,
   MenuIcon,
   ExternalLinkIcon,
+  ImagesIcon,
+  FileTextIcon,
+  Share2Icon,
+  MailIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +30,10 @@ const navItems = [
   { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboardIcon },
   { label: "Berita", href: "/admin/posts", icon: NewspaperIcon },
   { label: "Galeri", href: "/admin/gallery", icon: ImageIcon },
+  { label: "Hero", href: "/admin/hero", icon: ImagesIcon },
+  { label: "Konten Halaman", href: "/admin/content", icon: FileTextIcon },
+  { label: "Social Media", href: "/admin/social", icon: Share2Icon },
+  { label: "Pesan", href: "/admin/messages", icon: MailIcon },
   { label: "Pengaturan", href: "/admin/settings", icon: SettingsIcon },
 ];
 

@@ -7,6 +7,9 @@ import { TargetLulusan } from "@/components/sections/TargetLulusan";
 import { CTASection } from "@/components/sections/CTASection";
 import { Reveal } from "@/components/sections/Reveal";
 import { createMetadata, createJsonLd } from "@/lib/seo";
+import { getSectionData, getLayoutData } from "@/lib/home-data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = createMetadata({
   title: "Kurikulum & Program Pendidikan",
@@ -15,7 +18,16 @@ export const metadata: Metadata = createMetadata({
   path: "/kurikulum",
 });
 
-export default function KurikulumPage() {
+export default async function KurikulumPage() {
+  const [kurikulumData, pembinaanData, metodeData, targetData, ctaData, layoutData] = await Promise.all([
+    getSectionData("home", "kurikulum"),
+    getSectionData("home", "pembinaan"),
+    getSectionData("home", "metode"),
+    getSectionData("home", "target-lulusan"),
+    getSectionData("home", "cta"),
+    getLayoutData(),
+  ]);
+
   const jsonLd = createJsonLd("EducationalOccupationalProgram", {
     name: "Kurikulum Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA",
     description:
@@ -27,22 +39,16 @@ export default function KurikulumPage() {
   });
 
   return (
-    <FrontendLayout>
+    <FrontendLayout socialLinks={layoutData.socialLinks} settings={layoutData.settings}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Kurikulum />
-      <Reveal>
-        <Pembinaan />
-      </Reveal>
-      <Reveal>
-        <Metode />
-      </Reveal>
-      <Reveal>
-        <TargetLulusan />
-      </Reveal>
-      <CTASection />
+      <Kurikulum data={kurikulumData} />
+      <Reveal><Pembinaan data={pembinaanData} /></Reveal>
+      <Reveal><Metode data={metodeData} /></Reveal>
+      <Reveal><TargetLulusan data={targetData} /></Reveal>
+      <CTASection data={ctaData} />
     </FrontendLayout>
   );
 }

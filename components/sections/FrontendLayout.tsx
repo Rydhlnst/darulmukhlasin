@@ -3,18 +3,25 @@
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import type { SocialLink, SiteSetting } from "@/db/schema";
 
-export function FrontendLayout({ children }: { children: React.ReactNode }) {
+interface FrontendLayoutProps {
+  children: React.ReactNode;
+  socialLinks?: SocialLink[];
+  settings?: SiteSetting | null;
+}
+
+export function FrontendLayout({ children, socialLinks, settings }: FrontendLayoutProps) {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   return (
     <>
-      <Navbar />
+      <Navbar socialLinks={socialLinks} />
       <main className={isHome ? "flex-1" : "flex-1 pt-28 lg:pt-32"}>
         {children}
       </main>
-      <Footer />
+      <Footer socialLinks={socialLinks} settings={settings} />
     </>
   );
 }

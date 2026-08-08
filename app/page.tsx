@@ -12,6 +12,9 @@ import { CTASection } from "@/components/sections/CTASection";
 import { MapSection } from "@/components/sections/MapSection";
 import { Reveal } from "@/components/sections/Reveal";
 import { createMetadata, organizationJsonLd } from "@/lib/seo";
+import { getHomepageData } from "@/lib/home-data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = createMetadata({
   title: "Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA",
@@ -20,23 +23,25 @@ export const metadata: Metadata = createMetadata({
   path: "",
 });
 
-export default function Home() {
+export default async function Home() {
+  const data = await getHomepageData();
+
   return (
-    <FrontendLayout>
+    <FrontendLayout socialLinks={data.socialLinks} settings={data.settings}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
-      <Hero />
-      <Stats />
-      <Reveal><Profil /></Reveal>
-      <Reveal><VisiMisi /></Reveal>
-      <Reveal><Kurikulum /></Reveal>
-      <Reveal><Pembinaan /></Reveal>
-      <Reveal><Sejarah /></Reveal>
-      <Reveal><Gallery compact /></Reveal>
-      <CTASection />
-      <Reveal><MapSection /></Reveal>
+      <Hero data={data} />
+      <Stats items={data.stats} />
+      <Reveal><Profil data={data.profil} /></Reveal>
+      <Reveal><VisiMisi data={data.visiMisi} /></Reveal>
+      <Reveal><Kurikulum data={data.kurikulum} /></Reveal>
+      <Reveal><Pembinaan data={data.pembinaan} /></Reveal>
+      <Reveal><Sejarah data={data.sejarah} /></Reveal>
+      <Reveal><Gallery compact media={data.gallery} /></Reveal>
+      <CTASection data={data.cta} />
+      <Reveal><MapSection settings={data.settings} /></Reveal>
     </FrontendLayout>
   );
 }

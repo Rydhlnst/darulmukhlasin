@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import type { SocialLink } from "@/db/schema";
 
 const navItems = [
   { label: "Beranda", href: "/" },
@@ -26,15 +27,34 @@ const navItems = [
   { label: "Kontak", href: "/kontak" },
 ];
 
-const socialLinks = [
-  { icon: FacebookIcon, href: "#", label: "Facebook" },
-  { icon: InstagramIcon, href: "#", label: "Instagram" },
-  { icon: YoutubeIcon, href: "#", label: "YouTube" },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
+};
 
-export function Navbar() {
+interface NavbarProps {
+  socialLinks?: SocialLink[];
+}
+
+export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+
+  const socialLinks = React.useMemo(() => {
+    if (socialLinksProp && socialLinksProp.length > 0) {
+      return socialLinksProp.map((s) => ({
+        icon: iconMap[s.icon ?? ""] ?? FacebookIcon,
+        href: s.url,
+        label: s.platform,
+      }));
+    }
+    return [
+      { icon: FacebookIcon, href: "#", label: "Facebook" },
+      { icon: InstagramIcon, href: "#", label: "Instagram" },
+      { icon: YoutubeIcon, href: "#", label: "YouTube" },
+    ];
+  }, [socialLinksProp]);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -43,89 +63,39 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Bar - Logo + Social */}
       <div className="bg-white shadow-md transition-all duration-300">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo/logo.jpg"
-              alt="Logo Darul Mukhlasin KUBA"
-              width={40}
-              height={40}
-              className="h-10 w-10 shrink-0 rounded-full object-cover ring-2 ring-white/30"
-              priority
-            />
+            <Image src="/logo/logo.jpg" alt="Logo Darul Mukhlasin KUBA" width={40} height={40} className="h-10 w-10 shrink-0 rounded-full object-cover ring-2 ring-white/30" priority />
             <div className="flex flex-col">
-              <span className="text-sm font-bold leading-tight text-primary">
-                Darul Mukhlasin KUBA
-              </span>
-              <span className="hidden text-[10px] text-muted-foreground sm:block">
-                Pondok Pesantren Tahfidzul Qur&apos;an
-              </span>
+              <span className="text-sm font-bold leading-tight text-primary">Darul Mukhlasin KUBA</span>
+              <span className="hidden text-[10px] text-muted-foreground sm:block">Pondok Pesantren Tahfidzul Qur&apos;an</span>
             </div>
           </Link>
-
-          {/* Social Links - Desktop */}
           <div className="hidden items-center gap-2 lg:flex">
             {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary"
-                aria-label={social.label}
-              >
+              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary" aria-label={social.label}>
                 <social.icon className="h-4 w-4" />
               </a>
             ))}
           </div>
-
-          {/* Mobile Menu Button */}
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-primary hover:bg-muted lg:hidden"
-                />
-              }
-            >
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="text-primary hover:bg-muted lg:hidden" />}>
               <MenuIcon className="h-5 w-5" />
               <span className="sr-only">Buka menu</span>
             </SheetTrigger>
             <SheetContent side="left" showCloseButton={false}>
-              <SheetHeader className="border-b border-border pb-4">
-                <SheetTitle>Menu Navigasi</SheetTitle>
-              </SheetHeader>
+              <SheetHeader className="border-b border-border pb-4"><SheetTitle>Menu Navigasi</SheetTitle></SheetHeader>
               <div className="flex flex-col gap-1 p-4">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                      isActive(item.href)
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                    )}
-                  >
+                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={cn("rounded-md px-3 py-2 text-sm font-medium transition-colors", isActive(item.href) ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground")}>
                     {item.label}
                   </Link>
                 ))}
               </div>
               <div className="mt-auto flex items-center gap-3 border-t border-border p-4">
                 {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
-                    aria-label={social.label}
-                  >
+                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground" aria-label={social.label}>
                     <social.icon className="h-4 w-4" />
                   </a>
                 ))}
@@ -134,21 +104,10 @@ export function Navbar() {
           </Sheet>
         </div>
       </div>
-
-      {/* Bottom Bar - Nav Links (Desktop only) */}
       <div className="hidden border-t border-primary-foreground/10 bg-primary/95 transition-all duration-300 lg:block">
         <div className="mx-auto flex max-w-7xl items-center gap-1 px-4 sm:px-6 lg:px-8">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "border-b-2 px-4 py-4 text-sm font-medium transition-colors",
-                isActive(item.href)
-                  ? "border-primary-foreground text-primary-foreground"
-                  : "border-transparent text-primary-foreground/70 hover:text-primary-foreground"
-              )}
-            >
+            <Link key={item.href} href={item.href} className={cn("border-b-2 px-4 py-4 text-sm font-medium transition-colors", isActive(item.href) ? "border-primary-foreground text-primary-foreground" : "border-transparent text-primary-foreground/70 hover:text-primary-foreground")}>
               {item.label}
             </Link>
           ))}

@@ -31,6 +31,9 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
     bankName: initialSettings?.bankName ?? "",
     bankAccountNumber: initialSettings?.bankAccountNumber ?? "",
     bankAccountName: initialSettings?.bankAccountName ?? "",
+    mapsEmbedUrl: initialSettings?.mapsEmbedUrl ?? "",
+    mapsLink: initialSettings?.mapsLink ?? "",
+    operationalHours: initialSettings?.operationalHours ?? "",
   });
   const [saving, setSaving] = React.useState(false);
 
@@ -128,6 +131,45 @@ export function SettingsForm({ initialSettings }: SettingsFormProps) {
               onChange={(e) => updateField("address", e.target.value)}
               placeholder="Alamat lengkap"
               rows={2}
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Informasi Lokasi & Operasional</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="mapsEmbedUrl">Google Maps Embed URL</Label>
+            <Textarea
+              id="mapsEmbedUrl"
+              value={form.mapsEmbedUrl}
+              onChange={(e) => updateField("mapsEmbedUrl", e.target.value)}
+              placeholder="https://maps.google.com/maps?q=...&output=embed"
+              rows={2}
+            />
+            <p className="text-xs text-muted-foreground">
+              URL iframe Google Maps untuk peta di halaman kontak.
+            </p>
+          </div>
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="mapsLink">Google Maps Link</Label>
+            <Input
+              id="mapsLink"
+              value={form.mapsLink}
+              onChange={(e) => updateField("mapsLink", e.target.value)}
+              placeholder="https://maps.app.goo.gl/..."
+            />
+          </div>
+          <div className="space-y-2 sm:col-span-2">
+            <Label htmlFor="operationalHours">Jam Operasional</Label>
+            <Input
+              id="operationalHours"
+              value={form.operationalHours}
+              onChange={(e) => updateField("operationalHours", e.target.value)}
+              placeholder="mis: Senin - Jumat: 07.00 - 16.00 WIB"
             />
           </div>
         </CardContent>
