@@ -14,8 +14,14 @@ import {
   ClockIcon,
   MessageCircleIcon,
   NavigationIcon,
+  UsersIcon,
 } from "lucide-react";
 import type { SiteSetting } from "@/db/schema";
+
+const adminContacts = [
+  { name: "Ustadz Samsul Arifin", phone: "6281282810161", display: "0812-8281-0161" },
+  { name: "Ustadzah Khafiyya Ramadhani", phone: "6282283198275", display: "0822-8319-8275" },
+];
 
 interface MapSectionProps {
   settings?: SiteSetting | null;
@@ -38,32 +44,32 @@ export function MapSection({ settings }: MapSectionProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">Kunjungi Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA di Karimun, Kepulauan Riau.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-5">
-          <Card className="border-primary/10 bg-primary/[0.03] shadow-sm lg:col-span-2">
+          <Card className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm lg:col-span-2">
             <CardHeader><CardTitle className="text-lg">Informasi Kontak</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><MapPinIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><MapPinIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Alamat</h4>
                   <p className="text-sm text-muted-foreground">{address}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><PhoneIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><PhoneIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Telepon</h4>
                   <p className="text-sm text-muted-foreground">Hubungi via WhatsApp</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><MailIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><MailIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Email</h4>
                   <p className="text-sm text-muted-foreground">{email}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><ClockIcon className="h-5 w-5" /></div>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary"><ClockIcon className="h-5 w-5" /></div>
                 <div>
                   <h4 className="text-sm font-semibold text-foreground">Jam Operasional</h4>
                   <p className="text-sm text-muted-foreground">{operationalHours}</p>
@@ -79,11 +85,29 @@ export function MapSection({ settings }: MapSectionProps) {
               </div>
             </CardContent>
           </Card>
-          <Card className="overflow-hidden border-primary/10 p-0 shadow-sm lg:col-span-3">
+          <Card className="overflow-hidden border-[#d5ecd5] p-0 shadow-sm lg:col-span-3">
             <div className="aspect-square w-full lg:aspect-auto lg:min-h-[500px]">
               <iframe src={mapsEmbedUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA" />
             </div>
           </Card>
+        </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {adminContacts.map((c) => (
+            <Card key={c.phone} className="border-[#d5ecd5] bg-white shadow-sm">
+              <CardContent className="flex items-center gap-4 p-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d5ecd5] text-primary">
+                  <UsersIcon className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-semibold text-foreground">{c.name}</p>
+                  <p className="text-xs text-muted-foreground">{c.display}</p>
+                </div>
+                <Button size="sm" className="gap-1 shrink-0" render={<Link href={`https://wa.me/${c.phone}`} target="_blank" />}>
+                  <MessageCircleIcon className="h-3 w-3" />WhatsApp
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

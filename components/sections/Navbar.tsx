@@ -89,14 +89,14 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
               <SheetHeader className="border-b border-border pb-4"><SheetTitle>Menu Navigasi</SheetTitle></SheetHeader>
               <div className="flex flex-col gap-1 p-4">
                 {navItems.map((item) => (
-                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={cn("rounded-md px-3 py-2 text-sm font-medium transition-colors", isActive(item.href) ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-primary/10 hover:text-primary")}>
+                  <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={cn("rounded-md px-3 py-2 text-sm font-medium transition-colors", isActive(item.href) ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-[#d5ecd5] hover:text-primary")}>
                     {item.label}
                   </Link>
                 ))}
               </div>
               <div className="mt-auto flex items-center gap-3 border-t border-border p-4">
                 {socialLinks.map((social) => (
-                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground" aria-label={social.label}>
+                  <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-[#d5ecd5] text-primary transition-colors hover:bg-primary hover:text-primary-foreground" aria-label={social.label}>
                     <social.icon className="h-4 w-4" />
                   </a>
                 ))}

@@ -51,7 +51,7 @@ export function Footer({ socialLinks: socialLinksProp, settings }: FooterProps) 
   const email = settings?.email ?? "Email Pondok";
 
   return (
-    <footer className="border-t border-primary/20 bg-primary text-primary-foreground">
+    <footer className="border-t border-[#1a5c2a] bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">

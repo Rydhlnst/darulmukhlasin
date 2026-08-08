@@ -37,7 +37,7 @@ export function Profil({ data }: ProfilProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Card className="border-primary/10 bg-primary/[0.03]">
+          <Card className="border-[#d5ecd5] bg-[#eef7ee]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpenIcon className="h-5 w-5 text-primary" />Tentang Pesantren
@@ -57,7 +57,7 @@ export function Profil({ data }: ProfilProps) {
               </div>
             </CardContent>
           </Card>
-          <Card className="border-primary/10 bg-primary/[0.03]">
+          <Card className="border-[#d5ecd5] bg-[#eef7ee]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpenIcon className="h-5 w-5 text-primary" />Program Utama
