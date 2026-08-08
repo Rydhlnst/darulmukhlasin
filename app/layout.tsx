@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Arabic, Noto_Sans } from "next/font/google";
+import { Noto_Sans_Arabic, Noto_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
+
+const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -10,11 +12,7 @@ const notoSansArabic = Noto_Sans_Arabic({
   weight: ["400", "600", "700"],
 });
 
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-});
+const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA",
@@ -39,12 +37,10 @@ export default function RootLayout({
     <html
       lang="id"
       className={cn(
-        "h-full",
-        "antialiased",
-        notoSans.variable,
-        notoSansArabic.variable,
-        "font-sans"
-      )}
+              "h-full",
+              "antialiased",
+              notoSansArabic.variable
+            , "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
     >
       <body className="min-h-full flex flex-col">
         {children}
