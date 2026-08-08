@@ -30,7 +30,7 @@ interface MapSectionProps {
 export function MapSection({ settings }: MapSectionProps) {
   const address = settings?.address ?? "Kobel Darat, Desa Sawang Laut, Kec. Kundur Barat, Kab. Karimun, Kepulauan Riau";
   const phone = settings?.whatsapp ?? "6287825279426";
-  const email = settings?.email ?? "Email Pondok";
+  const email = settings?.email ?? "ppsdarulmukhlasin@gmail.com";
   const operationalHours = settings?.operationalHours ?? "Senin - Jumat: 07.00 - 16.00 WIB";
   const mapsEmbedUrl = settings?.mapsEmbedUrl ?? "https://maps.google.com/maps?q=Pondok%20Pesantren%20Darul%20Mukhlasin%20Kuba%20Kundur%20Barat%20Karimun&t=&z=14&ie=UTF8&iwloc=&output=embed";
   const mapsLink = settings?.mapsLink ?? "https://maps.app.goo.gl/LKRpJoxJxtTWNLTY7";

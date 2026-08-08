@@ -26,7 +26,7 @@ async function seed() {
     siteDescription:
       "Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA - Membentuk generasi Qur'ani yang beriman, berilmu, dan beramal.",
     phone: "6287825279426",
-    email: "info@darulmukhlasin.sch.id",
+    email: "ppsdarulmukhlasin@gmail.com",
     address:
       "Kobel Darat, Desa Sawang Laut, Kec. Kundur Barat, Kab. Karimun, Kepulauan Riau",
     whatsapp: "6287825279426",

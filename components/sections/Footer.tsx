@@ -48,7 +48,7 @@ export function Footer({ socialLinks: socialLinksProp, settings }: FooterProps) 
 
   const address = settings?.address ?? "Kobel Darat, Desa Sawang Laut, Kec. Kundur Barat, Kab. Karimun, Kepulauan Riau";
   const phone = settings?.whatsapp ?? "6287825279426";
-  const email = settings?.email ?? "Email Pondok";
+  const email = settings?.email ?? "ppsdarulmukhlasin@gmail.com";
 
   return (
     <footer className="border-t border-[#1a5c2a] bg-primary text-primary-foreground">
