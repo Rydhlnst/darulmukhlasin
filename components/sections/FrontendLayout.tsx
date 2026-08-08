@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { FloatingWhatsApp } from "@/components/sections/FloatingWhatsApp";
 import type { SocialLink, SiteSetting } from "@/db/schema";
 
 interface FrontendLayoutProps {
@@ -22,6 +23,7 @@ export function FrontendLayout({ children, socialLinks, settings }: FrontendLayo
         {children}
       </main>
       <Footer socialLinks={socialLinks} settings={settings} />
+      <FloatingWhatsApp />
     </>
   );
 }
