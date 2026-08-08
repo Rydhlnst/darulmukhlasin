@@ -19,8 +19,8 @@ import {
 import type { SiteSetting } from "@/db/schema";
 
 const adminContacts = [
-  { name: "Ustadz Samsul Arifin", phone: "6281282810161", display: "0812-8281-0161" },
-  { name: "Ustadzah Khafiyya Ramadhani", phone: "6282283198275", display: "0822-8319-8275" },
+  { name: "KH. Samsul Arifin, S.Pd.", phone: "6281282810161", display: "0812-8281-0161" },
+  { name: "Ustadzah Khafiyya Ramadhini, S.Pd.", phone: "6282283198275", display: "0822-8319-8275" },
 ];
 
 interface MapSectionProps {
