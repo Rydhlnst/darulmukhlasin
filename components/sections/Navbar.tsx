@@ -56,8 +56,9 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Tier 1: Logo + Social Icons */}
       <div className="bg-white shadow-md">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo/logo.jpg" alt="Logo Darul Mukhlasin KUBA" width={40} height={40} className="h-10 w-10 shrink-0 rounded-full object-cover ring-2 ring-primary/20" priority />
             <div className="flex flex-col">
@@ -65,14 +66,6 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
               <span className="hidden text-[10px] text-gray-500 sm:block">Pondok Pesantren Tahfidzul Qur&apos;an</span>
             </div>
           </Link>
-
-          <div className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className={cn("text-sm font-medium transition-colors hover:text-primary", isActive(item.href) ? "text-primary font-semibold" : "text-gray-600")}>
-                {item.label}
-              </Link>
-            ))}
-          </div>
 
           <div className="flex items-center gap-2">
             <div className="hidden items-center gap-1 sm:flex">
@@ -89,6 +82,18 @@ export function Navbar({ socialLinks: socialLinksProp }: NavbarProps) {
         </div>
       </div>
 
+      {/* Tier 2: Nav Links (desktop) */}
+      <div className="hidden bg-primary lg:block">
+        <div className="mx-auto flex max-w-7xl items-center gap-1 px-4 sm:px-6 lg:px-8">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className={cn("px-4 py-3 text-sm font-medium transition-colors", isActive(item.href) ? "text-white font-semibold" : "text-white/80 hover:text-white")}>
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="bg-white shadow-lg lg:hidden">
           <div className="flex flex-col p-4">

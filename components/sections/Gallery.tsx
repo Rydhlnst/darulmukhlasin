@@ -71,17 +71,17 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-4">
             {galleryImages.slice(0, slidesToShow).map((image, index) => (
-              <div key={index} className="min-w-0 flex-[0_0_100%] shrink-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-muted">
+              <div key={index} className="min-w-0 flex-[0_0_100%] shrink-0 p-2 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-muted shadow-sm">
                   <Dialog open={selectedImage === index} onOpenChange={(open) => { if (!open) setSelectedImage(null); }}>
                     <button onClick={() => setSelectedImage(index)} className="group absolute inset-0 z-10">
-                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-300 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
                     </button>
                     <DialogContent className="max-w-4xl p-2" showCloseButton={false}>
                       <DialogTitle className="sr-only">{image.alt}</DialogTitle>
                       <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
-                        <Image src={image.src} alt={image.alt} fill sizes="80vw" className="object-contain" priority />
+                        <Image src={image.src} alt={image.alt} fill sizes="80vw" quality={85} className="object-contain" priority />
                       </div>
                       <button onClick={() => setSelectedImage(null)} className="absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted" aria-label="Tutup">
                         <XIcon className="h-4 w-4" />
