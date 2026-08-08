@@ -3,14 +3,12 @@
 import * as React from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   ChevronLeftIcon,
@@ -71,26 +69,24 @@ export function Gallery({ compact = false, media: mediaProp }: GalleryProps) {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-4">
             {galleryImages.slice(0, slidesToShow).map((image, index) => (
-              <div key={index} className="min-w-0 flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-                <Dialog open={selectedImage === index} onOpenChange={(open) => { if (!open) setSelectedImage(null); }}>
-                  <DialogTrigger
-                    render={
-                      <button onClick={() => setSelectedImage(index)} className="group relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-muted" />
-                    }
-                  >
-                    <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl p-2" showCloseButton={false}>
-                    <DialogTitle className="sr-only">{image.alt}</DialogTitle>
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
-                      <Image src={image.src} alt={image.alt} fill sizes="80vw" className="object-contain" priority />
-                    </div>
-                    <button onClick={() => setSelectedImage(null)} className="absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted" aria-label="Tutup">
-                      <XIcon className="h-4 w-4" />
+              <div key={index} className="min-w-0 flex-[0_0_100%] shrink-0 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-muted">
+                  <Dialog open={selectedImage === index} onOpenChange={(open) => { if (!open) setSelectedImage(null); }}>
+                    <button onClick={() => setSelectedImage(index)} className="group absolute inset-0 z-10">
+                      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
                     </button>
-                  </DialogContent>
-                </Dialog>
+                    <DialogContent className="max-w-4xl p-2" showCloseButton={false}>
+                      <DialogTitle className="sr-only">{image.alt}</DialogTitle>
+                      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
+                        <Image src={image.src} alt={image.alt} fill sizes="80vw" className="object-contain" priority />
+                      </div>
+                      <button onClick={() => setSelectedImage(null)} className="absolute top-2 right-2 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted" aria-label="Tutup">
+                        <XIcon className="h-4 w-4" />
+                      </button>
+                    </DialogContent>
+                  </Dialog>
+                </div>
               </div>
             ))}
           </div>
