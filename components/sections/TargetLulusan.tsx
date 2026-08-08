@@ -27,19 +27,19 @@ export function TargetLulusan({ data }: TargetLulusanProps) {
   }
 
   return (
-    <section className="bg-[#fef9e7] py-16 lg:py-24">
+    <section className="bg-[#eef7ee] py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">{badge}</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
-        <Card className="mx-auto max-w-3xl border-[#fde68a] bg-white shadow-sm">
+        <Card className="mx-auto max-w-3xl border-[#d5ecd5] bg-white shadow-sm">
           <CardContent>
             <ul className="space-y-4">
               {items.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#b45309]" />
+                  <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#1a5c2a]" />
                   <span className="text-sm leading-relaxed text-muted-foreground">{item}</span>
                 </li>
               ))}
