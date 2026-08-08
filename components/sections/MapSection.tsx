@@ -30,7 +30,7 @@ export function MapSection({ settings }: MapSectionProps) {
   const mapsLink = settings?.mapsLink ?? "https://maps.app.goo.gl/LKRpJoxJxtTWNLTY7";
 
   return (
-    <section className="bg-primary/5 py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4">Lokasi Kami</Badge>

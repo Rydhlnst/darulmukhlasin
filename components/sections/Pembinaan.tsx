@@ -42,7 +42,7 @@ export function Pembinaan({ data }: PembinaanProps) {
           {items.map((item) => {
             const Icon = iconMap[item.icon] ?? HeartIcon;
             return (
-              <Card key={item.title} className="group border-primary/10 bg-primary/[0.03] shadow-sm transition-shadow hover:shadow-md">
+              <Card key={item.title} className="group border-primary/10 bg-white shadow-sm transition-shadow hover:shadow-md">
                 <CardContent className="flex flex-col items-center text-center">
                   <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="h-6 w-6" />

@@ -33,7 +33,7 @@ export function VisiMisi({ data }: VisiMisiProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Card className="border-primary/10 bg-primary/[0.03] shadow-sm">
+          <Card className="border-primary/10 bg-white shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TargetIcon className="h-5 w-5 text-primary" />Visi
@@ -45,7 +45,7 @@ export function VisiMisi({ data }: VisiMisiProps) {
               </blockquote>
             </CardContent>
           </Card>
-          <Card className="border-primary/10 bg-primary/[0.03] shadow-sm">
+          <Card className="border-primary/10 bg-white shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <ListIcon className="h-5 w-5 text-primary" />Misi
