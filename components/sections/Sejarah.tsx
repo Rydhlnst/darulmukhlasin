@@ -41,7 +41,7 @@ export function Sejarah({ data }: SejarahProps) {
   const visionBody = data?.visionBody ?? "Dengan semangat pengabdian yang terus dijaga, Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA berkomitmen untuk terus mencetak generasi Qur'ani yang beriman, berilmu, dan beramal, serta menjadi pusat pendidikan Islam yang memberikan manfaat bagi umat, bangsa, dan negara.";
 
   return (
-    <section id="sejarah" className="bg-[#fef3c7] py-16 lg:py-24">
+    <section id="sejarah" className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge className="mb-4 bg-[#1a5c2a] text-white">{badge}</Badge>
@@ -50,7 +50,7 @@ export function Sejarah({ data }: SejarahProps) {
         </div>
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <Card className="border-[#d97706] bg-white shadow-sm">
+            <Card className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CalendarIcon className="h-5 w-5 text-[#1a5c2a]" />Linimasa
@@ -75,7 +75,7 @@ export function Sejarah({ data }: SejarahProps) {
             </Card>
           </div>
           <div>
-            <Card className="h-full border-[#d97706] bg-[#fef3c7] shadow-sm">
+            <Card className="h-full border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <UserIcon className="h-5 w-5 text-primary" />Tokoh Pendiri
@@ -84,7 +84,7 @@ export function Sejarah({ data }: SejarahProps) {
               <CardContent>
                 <div className="space-y-4">
                   {tokohItems.map((tokoh) => (
-                    <div key={tokoh.name} className="rounded-md bg-[#fef3c7] p-3">
+                    <div key={tokoh.name} className="rounded-md bg-[#eef7ee] p-3">
                       <h4 className="text-sm font-semibold text-foreground">{tokoh.name}</h4>
                       <p className="mb-1 text-xs font-medium text-[#1a5c2a]">{tokoh.role}</p>
                       <p className="text-xs text-muted-foreground">{tokoh.description}</p>
@@ -95,7 +95,7 @@ export function Sejarah({ data }: SejarahProps) {
             </Card>
           </div>
         </div>
-        <Card className="mt-8 border-[#d97706] bg-white shadow-sm">
+        <Card className="mt-8 border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
           <CardContent className="flex items-start gap-4">
             <BuildingIcon className="mt-1 h-6 w-6 shrink-0 text-[#1a5c2a]" />
             <div>

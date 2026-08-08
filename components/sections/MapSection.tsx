@@ -36,7 +36,7 @@ export function MapSection({ settings }: MapSectionProps) {
   const mapsLink = settings?.mapsLink ?? "https://maps.app.goo.gl/LKRpJoxJxtTWNLTY7";
 
   return (
-    <section className="bg-[#fef3c7] py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge className="mb-4 bg-[#1a5c2a] text-white">Lokasi Kami</Badge>
@@ -44,7 +44,7 @@ export function MapSection({ settings }: MapSectionProps) {
           <p className="mx-auto max-w-2xl text-muted-foreground">Kunjungi Pondok Pesantren Tahfidzul Qur&apos;an Darul Mukhlasin KUBA di Karimun, Kepulauan Riau.</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-5">
-          <Card className="border-[#d97706] bg-white shadow-sm lg:col-span-2">
+          <Card className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm lg:col-span-2">
             <CardHeader><CardTitle className="text-lg">Informasi Kontak</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
@@ -85,7 +85,7 @@ export function MapSection({ settings }: MapSectionProps) {
               </div>
             </CardContent>
           </Card>
-          <Card className="overflow-hidden border-[#d97706] p-0 shadow-sm lg:col-span-3">
+          <Card className="overflow-hidden border-[#d5ecd5] p-0 shadow-sm lg:col-span-3">
             <div className="aspect-square w-full lg:aspect-auto lg:min-h-[500px]">
               <iframe src={mapsEmbedUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Lokasi Pondok Pesantren Tahfidzul Qur'an Darul Mukhlasin KUBA" />
             </div>
@@ -93,7 +93,7 @@ export function MapSection({ settings }: MapSectionProps) {
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {adminContacts.map((c) => (
-            <Card key={c.phone} className="border-[#d97706] bg-white shadow-sm">
+            <Card key={c.phone} className="border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
               <CardContent className="flex items-center gap-4 p-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1a5c2a] text-white">
                   <UsersIcon className="h-5 w-5" />

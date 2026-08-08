@@ -27,14 +27,14 @@ export function TargetLulusan({ data }: TargetLulusanProps) {
   }
 
   return (
-    <section className="bg-[#fef3c7] py-16 lg:py-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <Badge className="mb-4 bg-[#1a5c2a] text-white">{badge}</Badge>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">{description}</p>
         </div>
-        <Card className="mx-auto max-w-3xl border-[#d97706] bg-white shadow-sm">
+        <Card className="mx-auto max-w-3xl border-[#d5ecd5] bg-[#eef7ee] shadow-sm">
           <CardContent>
             <ul className="space-y-4">
               {items.map((item, index) => (
